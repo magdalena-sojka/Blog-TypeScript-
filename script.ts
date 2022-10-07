@@ -38,14 +38,14 @@
     let html = '';
 
     /* find all articles and loop through each of them */
-    const articles = document.querySelectorAll(selectorArticle + customSelector);
+    const articles = document.querySelectorAll(selectorArticle + customSelector) as NodeListOf<Element>;
     for (let article of articles) {
 
       /* find id of the article */
       const articleID = article.getAttribute('id');
 
       /* find elem that holds the title and retrieve it */
-      const articleTitle = article.querySelector(selectorTitle).innerHTML;
+      const articleTitle = article.querySelector(selectorTitle).innerHTML as string;
 
       /* create HTML of the link */
       const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle + '</span></a></li>';
@@ -90,7 +90,7 @@
       /* loop through tags */
       for (let tag of tagsArray) {
         /* generate HTML of the link */
-        const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li>';
+        const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li>' as string;
 
         /* add generated code to html variable */
         html = html + linkHTML;
@@ -142,7 +142,7 @@
       }
 
       /* create author link and add it  to article */
-      const html = 'by <a href="#author-' + author + '">' + author + '</a>'
+      const html = 'by <a href="#author-' + author + '">' + author + '</a>' as string;
       articleAuthor.insertAdjacentHTML('beforeend', html);
     }
 
