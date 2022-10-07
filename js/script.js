@@ -12,7 +12,6 @@
         const clickedElement = this;
         /* find active link and make it inactive */
         const activeLink = document.querySelector('.titles a.active');
-        ;
         if (activeLink)
             activeLink.classList.remove('active');
         /* add active class to clicked link */

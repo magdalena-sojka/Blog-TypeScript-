@@ -12,7 +12,7 @@
     const clickedElement = this;
 
     /* find active link and make it inactive */
-    const activeLink = document.querySelector('.titles a.active') as HTMLLinkElement;;
+    const activeLink: HTMLElement | null= document.querySelector('.titles a.active');
     if(activeLink) activeLink.classList.remove('active');
 
     /* add active class to clicked link */
@@ -45,7 +45,7 @@
       const articleID = article.getAttribute('id');
 
       /* find elem that holds the title and retrieve it */
-      const articleTitle = article.querySelector(selectorTitle).innerHTML as string;
+      const articleTitle = (article.querySelector(selectorTitle) as HTMLElement).innerHTML as string;
 
       /* create HTML of the link */
       const linkHTML = '<li><a href="#' + articleID + '"><span>' + articleTitle + '</span></a></li>';
